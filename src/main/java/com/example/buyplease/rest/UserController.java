@@ -1,5 +1,6 @@
 package com.example.buyplease.rest;
 
+import com.example.buyplease.mappers.UserMapper;
 import com.example.buyplease.model.ShopDto;
 import com.example.buyplease.model.User;
 import com.example.buyplease.model.UserDto;
@@ -29,9 +30,15 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
+
+    @RequestMapping(value = "{id}", method = RequestMethod.GET)
+    public ResponseEntity<UserDto> getUser(@PathVariable("id") Long id){
+        return new ResponseEntity<>(UserMapper.INSTANCE.toDto(userService.getById(id)), HttpStatus.OK);
+    }
+
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public ResponseEntity<UserDto> main(){
+    public ResponseEntity<UserDto> allUsers(){
         List<User> users = userService.getAll();
-        return new ResponseEntity(users.stream().map(s -> modelMapper.map(s, UserDto.class)), HttpStatus.OK);
+        return new ResponseEntity(users.stream().map(s -> UserMapper.INSTANCE.toDto(s)), HttpStatus.OK);
     }
 }

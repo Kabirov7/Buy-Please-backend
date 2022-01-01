@@ -20,7 +20,8 @@ public class ShopController {
     @Autowired
     private ShopService shopService;
 
-    @Autowired UserService userService;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public ResponseEntity<Shop> createShop(@RequestBody @Valid Shop shop){
@@ -28,13 +29,14 @@ public class ShopController {
         return new ResponseEntity<>(shop, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    public ResponseEntity<ShopDto> main(){
-        List<Shop> shops = shopService.getAll();
+    @RequestMapping(value = "{id}", method = RequestMethod.GET)
+    public ResponseEntity<ShopDto> getShop(@PathVariable("id") Long id){
+        return new ResponseEntity<>(ShopMapper.INSTANCE.toDto(shopService.getById(id)), HttpStatus.OK);
+    }
 
-        return new ResponseEntity(shops.stream().map(s -> {
-            ShopDto shopDto = ShopMapper.INSTANCE.toDto(s);
-            return shopDto;
-        }), HttpStatus.OK);
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public ResponseEntity<ShopDto> allShops(){
+        List<Shop> shops = shopService.getAll();
+        return new ResponseEntity(shops.stream().map(s -> ShopMapper.INSTANCE.toDto(s)), HttpStatus.OK);
     }
 }
