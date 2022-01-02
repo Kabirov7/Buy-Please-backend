@@ -1,9 +1,7 @@
 package com.example.buyplease.mappers;
 
 import com.example.buyplease.model.Shop;
-import com.example.buyplease.model.ShopDto;
-import com.example.buyplease.model.User;
-import com.example.buyplease.model.UserDto;
+import com.example.buyplease.model.dto.ShopDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;

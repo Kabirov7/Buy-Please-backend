@@ -1,9 +1,8 @@
 package com.example.buyplease.rest;
 
 import com.example.buyplease.mappers.UserMapper;
-import com.example.buyplease.model.ShopDto;
 import com.example.buyplease.model.User;
-import com.example.buyplease.model.UserDto;
+import com.example.buyplease.model.dto.UserDto;
 import com.example.buyplease.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

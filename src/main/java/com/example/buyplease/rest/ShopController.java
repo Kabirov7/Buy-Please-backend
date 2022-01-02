@@ -2,7 +2,7 @@ package com.example.buyplease.rest;
 
 import com.example.buyplease.mappers.ShopMapper;
 import com.example.buyplease.model.Shop;
-import com.example.buyplease.model.ShopDto;
+import com.example.buyplease.model.dto.ShopDto;
 import com.example.buyplease.service.ShopService;
 import com.example.buyplease.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

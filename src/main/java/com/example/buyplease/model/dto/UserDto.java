@@ -1,4 +1,4 @@
-package com.example.buyplease.model;
+package com.example.buyplease.model.dto;
 
 import org.modelmapper.ModelMapper;
 
@@ -33,11 +33,4 @@ public class UserDto implements Serializable {
         this.name = name;
     }
 
-//    public String getDescription() {
-//        return description;
-//    }
-//
-//    public void setDescription(String description) {
-//        this.description = description;
-//    }
 }
