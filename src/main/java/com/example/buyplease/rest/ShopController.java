@@ -1,8 +1,10 @@
 package com.example.buyplease.rest;
 
 import com.example.buyplease.mappers.ShopMapper;
+import com.example.buyplease.model.Employee;
 import com.example.buyplease.model.Shop;
 import com.example.buyplease.model.dto.ShopDto;
+import com.example.buyplease.service.EmployeeService;
 import com.example.buyplease.service.ShopService;
 import com.example.buyplease.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +23,14 @@ public class ShopController {
     private ShopService shopService;
 
     @Autowired
-    private CustomerService customerService;
+    private EmployeeService employeeService;
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public ResponseEntity<Shop> createShop(@RequestBody @Valid Shop shop){
+    public ResponseEntity<ShopDto> createShop(@RequestBody @Valid Shop shop){
         this.shopService.save(shop);
-        return new ResponseEntity<>(shop, HttpStatus.OK);
+        Employee employee = employeeService.getById(shop.getEmployee().getId());
+        shop.setEmployee(employee);
+        return new ResponseEntity<>(ShopMapper.INSTANCE.toDto(shop), HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
