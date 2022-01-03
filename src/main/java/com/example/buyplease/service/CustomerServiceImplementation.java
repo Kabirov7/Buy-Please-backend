@@ -1,5 +1,6 @@
 package com.example.buyplease.service;
 
+import com.example.buyplease.model.Customer;
 import com.example.buyplease.model.User;
 import com.example.buyplease.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +15,13 @@ public class CustomerServiceImplementation implements CustomerService {
     CustomerRepository customerRepository;
 
     @Override
-    public User getById(Long id) {
+    public Customer getById(Long id) {
         return customerRepository.getById(id);
     }
 
     @Override
-    public void save(User user) {
-        customerRepository.save(user);
+    public void save(Customer customer) {
+        customerRepository.save(customer);
     }
 
     @Override
@@ -29,7 +30,7 @@ public class CustomerServiceImplementation implements CustomerService {
     }
 
     @Override
-    public List<User> getAll() {
+    public List<Customer> getAll() {
         return customerRepository.findAll();
     }
 }

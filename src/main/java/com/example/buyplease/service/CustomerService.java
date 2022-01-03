@@ -1,15 +1,16 @@
 package com.example.buyplease.service;
 
+import com.example.buyplease.model.Customer;
 import com.example.buyplease.model.User;
 
 import java.util.List;
 
 public interface CustomerService {
-    User getById(Long id);
+    Customer getById(Long id);
 
-    void save(User user);
+    void save(Customer customer);
 
     void delete(long id);
 
-    List<User> getAll();
+    List<Customer> getAll();
 }

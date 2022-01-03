@@ -1,6 +1,7 @@
 package com.example.buyplease.rest;
 
 import com.example.buyplease.mappers.UserMapper;
+import com.example.buyplease.model.Customer;
 import com.example.buyplease.model.User;
 import com.example.buyplease.model.dto.UserDto;
 import com.example.buyplease.service.CustomerService;
@@ -20,13 +21,11 @@ public class UserController {
     @Autowired
     private CustomerService customerService;
 
-    @Autowired
-    private ModelMapper modelMapper;
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public ResponseEntity<User> createUser(@RequestBody @Valid User user){
-        this.customerService.save(user);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+    public ResponseEntity<User> createUser(@RequestBody @Valid Customer customer){
+        this.customerService.save(customer);
+        return new ResponseEntity<>(customer, HttpStatus.OK);
     }
 
 
@@ -37,7 +36,7 @@ public class UserController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ResponseEntity<UserDto> allUsers(){
-        List<User> users = customerService.getAll();
-        return new ResponseEntity(users.stream().map(s -> UserMapper.INSTANCE.toDto(s)), HttpStatus.OK);
+        List<Customer> customers = customerService.getAll();
+        return new ResponseEntity(customers.stream().map(s -> UserMapper.INSTANCE.toDto(s)), HttpStatus.OK);
     }
 }

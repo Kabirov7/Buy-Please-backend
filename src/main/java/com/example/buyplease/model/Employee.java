@@ -7,9 +7,9 @@ import java.util.Set;
 @Table(name = "employers")
 public class Employee extends User {
     @Column(name="salary")
-    double salary;
+    double salary = 0;
     @Column(name="commission")
-    double commission;
+    double commission = 0;
 
     @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Shop> shops;

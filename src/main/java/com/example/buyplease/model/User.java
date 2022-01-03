@@ -8,13 +8,13 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "email", unique=true)
+    @Column(name = "email", unique=true, nullable = false)
     String email;
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     String name;
-    @Column(name = "location")
+    @Column(name = "location", nullable = false)
     String location;
-    @Column(name = "contact")
+    @Column(name = "contact", nullable = false)
     String contact;
 
     public User() {}

@@ -8,9 +8,9 @@ import javax.persistence.Table;
 @Table(name = "customers")
 public class Customer extends User {
     @Column(name = "points")
-    double points;
+    double points = 0;
     @Column(name = "total_spent")
-    double totalSpent;
+    double totalSpent = 0;
 
     public double getPoints() {
         return points;

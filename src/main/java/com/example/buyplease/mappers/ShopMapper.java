@@ -10,6 +10,6 @@ import org.mapstruct.factory.Mappers;
 public interface ShopMapper {
     ShopMapper INSTANCE = Mappers.getMapper(ShopMapper.class);
 
-    @Mapping(source = "shop.user", target = "userDto")
+    @Mapping(source = "shop.employee", target = "userDto")
     ShopDto toDto(Shop shop);
 }
