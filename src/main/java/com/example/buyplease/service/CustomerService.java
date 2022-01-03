@@ -1,7 +1,6 @@
 package com.example.buyplease.service;
 
 import com.example.buyplease.model.Customer;
-import com.example.buyplease.model.User;
 
 import java.util.List;
 

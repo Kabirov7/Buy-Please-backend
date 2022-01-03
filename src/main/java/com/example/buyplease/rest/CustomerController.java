@@ -16,14 +16,14 @@ import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:8080/")
 @RestController
-@RequestMapping("/api/v1/users/")
-public class UserController {
+@RequestMapping("/api/v1/customers/")
+public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public ResponseEntity<User> createUser(@RequestBody @Valid Customer customer){
+    public ResponseEntity<Customer> createUser(@RequestBody @Valid Customer customer){
         this.customerService.save(customer);
         return new ResponseEntity<>(customer, HttpStatus.OK);
     }

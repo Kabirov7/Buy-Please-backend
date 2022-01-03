@@ -3,10 +3,13 @@ package com.example.buyplease.service;
 import com.example.buyplease.model.Employee;
 import com.example.buyplease.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class EmployeeServiceImplementation implements EmployeeService{
+
     @Autowired
     EmployeeRepository employeeRepository;
 
