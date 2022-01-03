@@ -2,10 +2,8 @@ package com.example.buyplease.rest;
 
 import com.example.buyplease.mappers.UserMapper;
 import com.example.buyplease.model.Customer;
-import com.example.buyplease.model.User;
-import com.example.buyplease.model.dto.UserDto;
+import com.example.buyplease.dto.UserDto;
 import com.example.buyplease.service.CustomerService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

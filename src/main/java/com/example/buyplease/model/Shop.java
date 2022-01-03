@@ -1,6 +1,7 @@
 package com.example.buyplease.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "shops")

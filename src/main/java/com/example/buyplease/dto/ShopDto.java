@@ -1,4 +1,4 @@
-package com.example.buyplease.model.dto;
+package com.example.buyplease.dto;
 
 import java.io.Serializable;
 

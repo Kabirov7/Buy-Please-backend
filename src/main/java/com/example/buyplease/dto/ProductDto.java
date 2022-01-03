@@ -1,6 +1,8 @@
-package com.example.buyplease.model.dto;
+package com.example.buyplease.dto;
 
-public class ProductDto {
+import java.io.Serializable;
+
+public class ProductDto implements Serializable {
     Long id;
     ShopDto shopDto;
     String name;

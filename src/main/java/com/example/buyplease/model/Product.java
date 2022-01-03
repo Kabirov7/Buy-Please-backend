@@ -50,6 +50,13 @@ public class Product {
         this.manufacturer = manufacturer;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Shop getShop() {
         return shop;

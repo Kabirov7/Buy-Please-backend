@@ -1,16 +1,14 @@
 package com.example.buyplease.service;
 
-import com.example.buyplease.model.Order;
 import com.example.buyplease.model.Product;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
+
 public interface ProductService {
     Product getById(Long id);
 
     void save(Product product);
 
-    void delete(long id);
+    void delete(Long id);
 
     List<Product> getAll();
 }

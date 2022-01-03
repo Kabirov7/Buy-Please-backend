@@ -4,9 +4,10 @@ import com.example.buyplease.model.Order;
 import com.example.buyplease.model.Product;
 import com.example.buyplease.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ProductServiceImplementation implements ProductService{
     @Autowired
     ProductRepository productRepository;
@@ -22,7 +23,7 @@ public class ProductServiceImplementation implements ProductService{
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(Long id) {
         productRepository.deleteById(id);
     }
 

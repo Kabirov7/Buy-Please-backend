@@ -1,11 +1,9 @@
-package com.example.buyplease.model.dto;
+package com.example.buyplease.dto;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-public class OrderDto {
+import java.io.Serializable;
+
+public class OrderDto implements Serializable {
     Long id;
     UserDto customerDto;
     ProductDto productDto;

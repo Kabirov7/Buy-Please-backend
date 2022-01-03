@@ -1,6 +1,5 @@
-package com.example.buyplease.model.dto;
+package com.example.buyplease.dto;
 
-import org.modelmapper.ModelMapper;
 
 import java.io.Serializable;
 

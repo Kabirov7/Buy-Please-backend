@@ -2,18 +2,23 @@ package com.example.buyplease.model;
 
 import javax.persistence.*;
 
+@Entity
+@Table(name = "orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id")
     Customer customer;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id")
     Product product;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "shop_id")
     Shop shop;
 
     @Column(name = "quantity")
@@ -32,6 +37,14 @@ public class Order {
         this.quantity = quantity;
         this.totalPrice = totalPrice;
     }
+
+    public Order() {
+
+    }
+
+    public Long getId() { return id; }
+
+    public void setId(Long id) { this.id = id; }
 
     public Customer getCustomer() {
         return customer;
