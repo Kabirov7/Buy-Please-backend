@@ -1,35 +1,35 @@
 package com.example.buyplease.service;
 
 import com.example.buyplease.model.User;
-import com.example.buyplease.repository.UserRepository;
+import com.example.buyplease.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserServiceImplementation implements UserService{
+public class CustomerServiceImplementation implements CustomerService {
 
     @Autowired
-    UserRepository userRepository;
+    CustomerRepository customerRepository;
 
     @Override
     public User getById(Long id) {
-        return userRepository.getById(id);
+        return customerRepository.getById(id);
     }
 
     @Override
     public void save(User user) {
-        userRepository.save(user);
+        customerRepository.save(user);
     }
 
     @Override
     public void delete(long id) {
-        userRepository.deleteById(id);
+        customerRepository.deleteById(id);
     }
 
     @Override
     public List<User> getAll() {
-        return userRepository.findAll();
+        return customerRepository.findAll();
     }
 }

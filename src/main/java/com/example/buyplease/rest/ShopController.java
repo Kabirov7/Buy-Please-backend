@@ -4,7 +4,7 @@ import com.example.buyplease.mappers.ShopMapper;
 import com.example.buyplease.model.Shop;
 import com.example.buyplease.model.dto.ShopDto;
 import com.example.buyplease.service.ShopService;
-import com.example.buyplease.service.UserService;
+import com.example.buyplease.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +21,7 @@ public class ShopController {
     private ShopService shopService;
 
     @Autowired
-    private UserService userService;
+    private CustomerService customerService;
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public ResponseEntity<Shop> createShop(@RequestBody @Valid Shop shop){

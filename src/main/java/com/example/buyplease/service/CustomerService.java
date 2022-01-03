@@ -4,7 +4,7 @@ import com.example.buyplease.model.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface CustomerService {
     User getById(Long id);
 
     void save(User user);
