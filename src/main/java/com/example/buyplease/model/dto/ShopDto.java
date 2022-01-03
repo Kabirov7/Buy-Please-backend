@@ -5,14 +5,16 @@ import java.io.Serializable;
 public class ShopDto implements Serializable {
     Long id;
     String name;
+    String description;
     UserDto userDto;
 
     public ShopDto() {
     }
 
-    public ShopDto(Long id, String name, UserDto userDto) {
+    public ShopDto(Long id, String name, String description, UserDto userDto) {
         this.id = id;
         this.name = name;
+        this.description = description;
         this.userDto = userDto;
     }
 
@@ -30,6 +32,14 @@ public class ShopDto implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public UserDto getUserDto() {

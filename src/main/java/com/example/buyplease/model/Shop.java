@@ -1,32 +1,61 @@
 package com.example.buyplease.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "shops")
-public class Shop extends ABC{
+public class Shop{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinTable(
-//            name = "user_shoop",
-//            joinColumns = @JoinColumn(name = "user_id"),
-//            inverseJoinColumns = @JoinColumn(name = "book_id")
-//    )
-    private User user;
+    private Employee employee;
 
-    public Shop(){}
-    public Shop(String name, String desc, User user){
+    @Column(name = "name")
+    String name;
+
+    @Column(name = "description")
+    String description;
+
+    public Shop() {
+    }
+
+    public Shop(Employee employee, String name, String description) {
+        this.employee = employee;
         this.name = name;
-        this.description = desc;
-        this.user = user;
+        this.description = description;
     }
 
-    public User getUser() {
-        return user;
+    public Long getId() {
+        return id;
     }
-//
-    public void setUser(User user) {
-        this.user = user;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

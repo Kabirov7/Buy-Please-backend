@@ -2,38 +2,27 @@ package com.example.buyplease.model;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "users")
+@MappedSuperclass
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
-    @Column(name = "uid")
-    String uid;
-
-    @Column(name = "email")
+    @Column(name = "email", unique=true)
     String email;
-
-    @Column(name = "email_verified")
-    boolean emailVerified;
-
+    @Column(name = "name")
+    String name;
+    @Column(name = "location")
+    String location;
     @Column(name = "contact")
     String contact;
 
-    @Column(name = "points")
-    double points;
+    public User() {}
 
-    @Column(name = "totalSpent")
-    double totalSpent;
-
-    public User() {
-    }
-
-    public User(String email, String contact) {
+    public User(String email, String name, String location, String contact) {
         this.email = email;
+        this.name = name;
+        this.location = location;
         this.contact = contact;
     }
 
@@ -45,14 +34,6 @@ public class User {
         this.id = id;
     }
 
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -61,12 +42,20 @@ public class User {
         this.email = email;
     }
 
-    public boolean isEmailVerified() {
-        return emailVerified;
+    public String getName() {
+        return name;
     }
 
-    public void setEmailVerified(boolean emailVerified) {
-        this.emailVerified = emailVerified;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getContact() {
@@ -75,21 +64,5 @@ public class User {
 
     public void setContact(String contact) {
         this.contact = contact;
-    }
-
-    public double getPoints() {
-        return points;
-    }
-
-    public void setPoints(double points) {
-        this.points = points;
-    }
-
-    public double getTotalSpent() {
-        return totalSpent;
-    }
-
-    public void setTotalSpent(double totalSpent) {
-        this.totalSpent = totalSpent;
     }
 }
