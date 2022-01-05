@@ -1,6 +1,5 @@
-package com.example.buyplease.rest;
+package com.example.buyplease.controller;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import org.springframework.beans.factory.annotation.Autowired;

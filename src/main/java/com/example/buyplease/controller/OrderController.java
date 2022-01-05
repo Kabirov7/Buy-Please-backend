@@ -1,8 +1,7 @@
-package com.example.buyplease.rest;
+package com.example.buyplease.controller;
 
 import com.example.buyplease.dto.OrderDto;
 import com.example.buyplease.mappers.OrderMapper;
-import com.example.buyplease.mappers.ProductMapper;
 import com.example.buyplease.model.Customer;
 import com.example.buyplease.model.Order;
 import com.example.buyplease.model.Product;

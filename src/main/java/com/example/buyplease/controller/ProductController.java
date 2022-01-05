@@ -1,4 +1,4 @@
-package com.example.buyplease.rest;
+package com.example.buyplease.controller;
 
 import com.example.buyplease.mappers.ProductMapper;
 import com.example.buyplease.model.Product;

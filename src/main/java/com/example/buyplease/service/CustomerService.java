@@ -12,4 +12,6 @@ public interface CustomerService {
     void delete(long id);
 
     List<Customer> getAll();
+
+    List<Customer> getByPointsBetween(double point, double biggerPoint);
 }

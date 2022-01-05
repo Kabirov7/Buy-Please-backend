@@ -33,4 +33,9 @@ public class CustomerServiceImplementation implements CustomerService {
     public List<Customer> getAll() {
         return customerRepository.findAll();
     }
+
+    @Override
+    public List<Customer> getByPointsBetween(double point, double biggerPoint){
+        return customerRepository.findCustomersByPointsBetween(point, biggerPoint);
+    }
 }
