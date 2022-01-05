@@ -7,17 +7,15 @@ public class OrderDto implements Serializable {
     Long id;
     UserDto customerDto;
     ProductDto productDto;
-    ShopDto shopDto;
     Long quantity;
     Long totalPrice;
 
     public OrderDto() {}
 
-    public OrderDto(Long id, UserDto customerDto, ProductDto productDto, ShopDto shopDto, Long quantity, Long totalPrice) {
+    public OrderDto(Long id, UserDto customerDto, ProductDto productDto, Long quantity, Long totalPrice) {
         this.id = id;
         this.customerDto = customerDto;
         this.productDto = productDto;
-        this.shopDto = shopDto;
         this.quantity = quantity;
         this.totalPrice = totalPrice;
     }
@@ -44,14 +42,6 @@ public class OrderDto implements Serializable {
 
     public void setProductDto(ProductDto productDto) {
         this.productDto = productDto;
-    }
-
-    public ShopDto getShopDto() {
-        return shopDto;
-    }
-
-    public void setShopDto(ShopDto shopDto) {
-        this.shopDto = shopDto;
     }
 
     public Long getQuantity() {

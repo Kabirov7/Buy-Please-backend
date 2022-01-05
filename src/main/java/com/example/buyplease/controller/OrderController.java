@@ -5,7 +5,6 @@ import com.example.buyplease.mappers.OrderMapper;
 import com.example.buyplease.model.Customer;
 import com.example.buyplease.model.Order;
 import com.example.buyplease.model.Product;
-import com.example.buyplease.model.Shop;
 import com.example.buyplease.service.CustomerService;
 import com.example.buyplease.service.OrderService;
 import com.example.buyplease.service.ProductService;
@@ -36,10 +35,8 @@ public class OrderController {
     @RequestMapping(value = "", method = RequestMethod.POST)
     public ResponseEntity<OrderDto> createOrder(@RequestBody @Valid Order order){
         this.orderService.save(order);
-        Shop shop = shopService.getById(order.getShop().getId());
         Product product = productService.getById(order.getProduct().getId());
         Customer customer = customerService.getById(order.getCustomer().getId());
-        order.setShop(shop);
         order.setProduct(product);
         order.setCustomer(customer);
         return new ResponseEntity<>(OrderMapper.INSTANCE.toDto(order), HttpStatus.CREATED);

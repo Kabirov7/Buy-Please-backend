@@ -17,10 +17,6 @@ public class Order {
     @JoinColumn(name = "product_id")
     Product product;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "shop_id")
-    Shop shop;
-
     @Column(name = "quantity")
     Long quantity;
 
@@ -30,10 +26,9 @@ public class Order {
 //    TODO: is customer paid order or not.
 
 
-    public Order(Customer customer, Product product, Shop shop, Long quantity, Long totalPrice) {
+    public Order(Customer customer, Product product, Long quantity, Long totalPrice) {
         this.customer = customer;
         this.product = product;
-        this.shop = shop;
         this.quantity = quantity;
         this.totalPrice = totalPrice;
     }
@@ -60,14 +55,6 @@ public class Order {
 
     public void setProduct(Product product) {
         this.product = product;
-    }
-
-    public Shop getShop() {
-        return shop;
-    }
-
-    public void setShop(Shop shop) {
-        this.shop = shop;
     }
 
     public Long getQuantity() {
