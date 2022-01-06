@@ -8,7 +8,7 @@ public class OrderDto implements Serializable {
     UserDto customerDto;
     ProductDto productDto;
     Long quantity;
-    Long totalPrice;
+    double totalPrice;
 
     public OrderDto() {}
 
@@ -52,11 +52,11 @@ public class OrderDto implements Serializable {
         this.quantity = quantity;
     }
 
-    public Long getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(Long totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
 }

@@ -24,21 +24,22 @@ public class OrderController {
     private OrderService orderService;
 
     @Autowired
-    private ShopService shopService;
-
-    @Autowired
     private CustomerService customerService;
 
     @Autowired
     private ProductService productService;
 
+//    Todo: user have to be automate detected
     @RequestMapping(value = "", method = RequestMethod.POST)
     public ResponseEntity<OrderDto> createOrder(@RequestBody @Valid Order order){
-        this.orderService.save(order);
         Product product = productService.getById(order.getProduct().getId());
         Customer customer = customerService.getById(order.getCustomer().getId());
+        double totalPrice = order.getQuantity() * product.getPrice();
         order.setProduct(product);
         order.setCustomer(customer);
+        order.setTotalPrice(totalPrice);
+
+        this.orderService.save(order);
         return new ResponseEntity<>(OrderMapper.INSTANCE.toDto(order), HttpStatus.CREATED);
 
     }

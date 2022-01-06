@@ -21,7 +21,7 @@ public class Order {
     Long quantity;
 
     @Column(name = "total_price")
-    Long totalPrice;
+    double totalPrice;
 
 //    TODO: is customer paid order or not.
 
@@ -65,11 +65,11 @@ public class Order {
         this.quantity = quantity;
     }
 
-    public Long getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(Long totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
 }
