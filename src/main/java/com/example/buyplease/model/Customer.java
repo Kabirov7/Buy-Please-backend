@@ -1,16 +1,15 @@
 package com.example.buyplease.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "customers")
 public class Customer extends User {
     @Column(name = "points")
-    double points = 0;
+    private double points = 0;
     @Column(name = "total_spent")
-    double totalSpent = 0;
+    private double totalSpent = 0;
 
     public double getPoints() {
         return points;

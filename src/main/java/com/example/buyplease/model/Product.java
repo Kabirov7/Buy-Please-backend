@@ -10,31 +10,31 @@ public class Product {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    Shop shop;
+    private Shop shop;
 
-    @Column(name = "name")
-    String name;
+    @Column(name = "name", nullable = false)
+    private String name;
 
-    @Column(name = "description")
-    String description;
+    @Column(name = "description", nullable = false)
+    private String description;
 
-    @Column(name = "type")
-    String type;
+    @Column(name = "type", nullable = false)
+    private String type;
 
-    @Column(name = "subtype")
-    String subtype;
+    @Column(name = "subtype", nullable = false)
+    private String subtype;
 
-    @Column(name = "price")
-    double price;
+    @Column(name = "price", nullable = false)
+    private double price;
 
-    @Column(name = "quantity_in_stock")
-    int quantityInStock;
+    @Column(name = "quantity_in_stock", nullable = false)
+    private int quantityInStock;
 
     @Column(name = "quantity_sold")
-    int quantitySold;
+    private int quantitySold = 0;
 
-    @Column(name = "manufacturer")
-    String manufacturer;
+    @Column(name = "manufacturer", nullable = false)
+    private String manufacturer;
 
     public Product() {}
 

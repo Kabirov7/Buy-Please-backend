@@ -1,6 +1,9 @@
 package com.example.buyplease.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @MappedSuperclass
 public class User {
@@ -9,13 +12,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "email", unique=true, nullable = false)
-    String email;
+    private String email;
     @Column(name = "name", nullable = false)
-    String name;
+    private String name;
     @Column(name = "location", nullable = false)
-    String location;
+    private String location;
     @Column(name = "contact", nullable = false)
-    String contact;
+    private String contact;
 
     public User() {}
 

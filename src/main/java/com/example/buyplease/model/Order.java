@@ -11,14 +11,14 @@ public class Order {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
-    Customer customer;
+    private Customer customer;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
-    Product product;
+    private Product product;
 
     @Column(name = "quantity")
-    Long quantity;
+    private Long quantity;
 
     @Column(name = "total_price")
     double totalPrice;

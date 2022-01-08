@@ -1,5 +1,7 @@
 package com.example.buyplease.model;
 
+import org.springframework.lang.Nullable;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -11,13 +13,14 @@ public class Shop{
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @Column(nullable = false)
     private Employee employee;
 
-    @Column(name = "name")
-    String name;
+    @Column(name = "name", nullable = false)
+    private String name;
 
-    @Column(name = "description")
-    String description;
+    @Column(name = "description", nullable = false)
+    private String description;
 
     public Shop() {
     }

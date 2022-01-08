@@ -1,15 +1,16 @@
 package com.example.buyplease.model;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Set;
 
 @Entity
 @Table(name = "employers")
 public class Employee extends User {
     @Column(name="salary")
-    double salary = 0;
+    private double salary = 0;
     @Column(name="commission")
-    double commission = 0;
+    private double commission = 0;
 
     @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Shop> shops;
